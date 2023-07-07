@@ -1,21 +1,38 @@
 format: jb-book
 root: intro
 parts: 
-- caption: Elektronika 
+- caption: Počítače  
+  chapters:
+  - file: pocitace/uvod 
+    title: Úvod
+  - file: pocitace/os
+    title: Operační systémy
+    sections:
+    - file: pocitace/paralelismus
+      title: Paralelismus
+  - file: pocitace/cpu
+    title: Procesor 
+
+- caption: Programování 
   chapters:
   - file: dummy/1
-- caption: Počítače a jejich programování  
+
+- caption: Počítačové sítě
   chapters:
   - file: dummy/2
+
 - caption: Webové technologie 
   chapters:
   - file: dummy/3
+
 - caption: Vývoj her 
   chapters:
   - file: dummy/4
+
 - caption: Počítačová bezpečnost 
   chapters:
   - file: dummy/5
+
 - caption: Umělá inteligence a strojové učení 
   chapters:
   - file: dummy/6
