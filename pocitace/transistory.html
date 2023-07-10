@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Úvod &#8212; Kapesní průvodce počítačových technologií</title>
+    <title>Transistory &#8212; Kapesní průvodce počítačových technologií</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/uvod';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/transistory';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Od transistoru k procesoru" href="transistor_cpu.html" />
-    <link rel="prev" title="Úvod" href="../intro.html" />
+    <link rel="next" title="Operační systém" href="os.html" />
+    <link rel="prev" title="Od transistoru k procesoru" href="transistor_cpu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,9 +158,9 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítače</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Úvod</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="transistor_cpu.html">Od transistoru k CPU</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="transistory.html">Transistory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uvod.html">Úvod</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transistor_cpu.html">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Transistory</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="os.html">Operační systémy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/pocitace/uvod.md" target="_blank"
+      <li><a href="../_sources/pocitace/transistory.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Úvod</h1>
+    <h1>Transistory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,18 +339,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="uvod">
-<h1>Úvod<a class="headerlink" href="#uvod" title="Permalink to this heading">#</a></h1>
-<p>Cílem této kapitoly je představit několik základních principů aplikovaných v dnešních počítačích. Ultimátně by dohromady měly pokrýt všchno potřebné k pochopení fungování počítačů tak, aby čtenář k pochopení složitějších konceptů přesně věděl co má hledat.</p>
-<div class="note admonition">
-<p class="admonition-title">Poznámka</p>
-<p>Toto je jedna z kapitol, ve které často zpětně odkazuji na předchozí text. Je tím pádem doporučeno ji číst sekvenčně.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="transistory">
+<h1>Transistory<a class="headerlink" href="#transistory" title="Permalink to this heading">#</a></h1>
+<p>Transistor je elektronická součástka s třemi nožičkami, jejíž funkce je velmi jednoduchá: Napětí/proud který bude přítomen na první nožičce je přímo ovlivňuje proud který poteče mezi druhou a třetí nožičkou.</p>
+<p>V tuto chvíli je potřeba jasně vymezit rozsah tohoto textu. V definici transistoru se objevuje proud a napětí a to už vyžaduje minimálně znalost středoškolské fyziky. Před pokračováním tedy zavedeme podstatné zjednodušení které budeme používat.</p>
+<p>Místo popisování napětí a proudů se budeme bavit o tzv. logických hodnotách. Jedoduše řekneme že něco má logickou hodnotu 1 nebo 0. (Reálně to např. bude znamenat že napětí mezi zkoumaným bodem a zemí je více než/méně než nějaká stanovená hodnota)</p>
+<div class="example admonition">
+<p class="admonition-title">Příklad</p>
+<p>Pokud se budeme na jednoduchý vodič dívat jako na součástku se vstupem a výstupem, můžeme o ní říct, že logická hodnota na výstupu je rovna logické hodnotě na vstupu.</p>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">Varování</p>
-<p>Jak jsem zmínil v úvodu knihy, i když se snažím věci vysvětlit jak nejlépe umím, zdaleka netvrdím že je tohle nejlepší materiál. Pokud umíte anglicky, vyhovují Vám videa a máte víc času, doporučuji se místo čtení téhle kapitoly podívat na následující playlist:</p>
-<p><a class="reference external" href="https://youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo">https://youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo</a></p>
-</div>
+<p><strong>Nová definice transistoru:</strong></p>
+<p>Transistor je součástka, která má dva vstupy a jeden výstup.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -385,20 +384,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="transistor_cpu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Úvod</p>
+        <p class="prev-next-title">Od transistoru k procesoru</p>
       </div>
     </a>
     <a class="right-next"
-       href="transistor_cpu.html"
+       href="os.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Od transistoru k procesoru</p>
+        <p class="prev-next-title">Operační systém</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
