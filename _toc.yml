@@ -5,13 +5,16 @@ parts:
   chapters:
   - file: pocitace/uvod 
     title: Úvod
+  - file: pocitace/transistor_cpu
+    title: Od transistoru k CPU 
+    sections:
+    - file: pocitace/transistory
+      title: Transistory 
   - file: pocitace/os
     title: Operační systémy
     sections:
     - file: pocitace/paralelismus
       title: Paralelismus
-  - file: pocitace/cpu
-    title: Procesor 
 
 - caption: Programování 
   chapters:
