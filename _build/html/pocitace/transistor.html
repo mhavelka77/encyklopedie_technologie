@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Od transistoru k procesoru &#8212; Kapesní průvodce počítačových technologií</title>
+    <title>Transistor &#8212; Kapesní průvodce počítačových technologií</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/transistor_cpu';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/transistor';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transistor" href="transistor.html" />
-    <link rel="prev" title="Úvod" href="uvod.html" />
+    <link rel="next" title="Operační systém" href="os.html" />
+    <link rel="prev" title="Od transistoru k procesoru" href="transistor_cpu.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítače</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="uvod.html">Úvod</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="transistor.html">Transistor</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transistor_cpu.html">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Transistor</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="os.html">Operační systémy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/pocitace/transistor_cpu.md" target="_blank"
+      <li><a href="../_sources/pocitace/transistor.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Od transistoru k procesoru</h1>
+    <h1>Transistor</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -339,21 +339,52 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="od-transistoru-k-procesoru">
-<h1>Od transistoru k procesoru<a class="headerlink" href="#od-transistoru-k-procesoru" title="Permalink to this heading">#</a></h1>
-<p>Tuto podkapitolu považuji za nejdůležitější pro všechny, které reálně zajímá jak věci fungují. Pokusím se prostřednictvím několika textů odrazit od jednoduché elektroniky a dostat se až k jednoduchému modelu procesoru. Tento model získaný na konci kapitoly ještě nebude postačující k pochopení všeho co se v počítačích děje a dokonce se může zdát že je tomu až moc vzdálený. Navážu ne něj ale v kapitole o operačních systémech, kde by vše mělo začít dávat smysl.</p>
-<p><strong>Nekolik poznámek:</strong></p>
-<ul class="simple">
-<li><p>Jak bylo zmíněno, tahle podkapitola je hlavně pro ty, kteří chtějí pochopit jak počítač funguje. Pokud jste tu jen kvůli získání přehledu o technologiích, pravděpodobně ji můžete přeskočit.<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-<li><p>To co umožňuje počítačům provádět všechny užitečné a komplexní funkce jako je čtení na internetu není magie, ale spoustu chytrých mechanismů naskládaných na sobě. V následujících podpodkapitolách budou přesně tyto mechanismy popsány - proto se může někdy zdát, že s fungováním počítačů zas tolik nesouvisí. Doufám ale, že vše ve finále začne dávat smysl.</p></li>
-</ul>
-<hr class="footnotes docutils" />
-<aside class="footnote brackets" id="id2" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Jen bych ale ještě rád dodal, že pokud se chcete stát dobrým programátorem/síťařem/čímkoli souvisejícím s počítači, musíte tohle znát.</p>
-</aside>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="transistor">
+<h1>Transistor<a class="headerlink" href="#transistor" title="Permalink to this heading">#</a></h1>
+<p>Transistor je elektronická součástka s třemi nožičkami, jejíž funkce je velmi jednoduchá: Napětí/proud který bude přítomen na první nožičce je přímo ovlivňuje proud který poteče mezi druhou a třetí nožičkou. Vypadá třeba takhle:</p>
+<a class="reference internal image-reference" href="../_images/transistor.png"><img alt="Transistor" class="align-center" src="../_images/transistor.png" style="width: 250px;" /></a>
+<p>V tuto chvíli je potřeba jasně vymezit rozsah tohoto textu. V definici transistoru se objevuje proud a napětí a to už vyžaduje minimálně znalost středoškolské fyziky. Před pokračováním tedy zavedeme podstatné zjednodušení které budeme používat.</p>
+<p>Místo popisování napětí a proudů se budeme bavit o tzv. logických hodnotách. Jedoduše řekneme že něco má logickou hodnotu 1 nebo 0. (Reálně to např. bude znamenat že napětí mezi zkoumaným bodem a zemí je více než/méně než nějaká stanovená hodnota)</p>
+<div class="example admonition">
+<p class="admonition-title">Příklad</p>
+<p>Pokud se budeme na jednoduchý vodič dívat jako na součástku se vstupem a výstupem, můžeme o ní říct, že logická hodnota na výstupu je rovna logické hodnotě na vstupu.</p>
 </div>
+<p><strong>Nová definice transistoru:</strong></p>
+<p>Transistor je součástka, která má dva vstupy a jeden výstup. Pokud na prvním vstupu bude logická hodnota 1, na výstupu bude ta samá logická hodnota jako na druhém vstupu. Pokud na prvním vstupu bude 0, na výstupu bude také 0.</p>
+<p>Tenhle popis sice stačí, ale možná jste si text museli přečíst dvakrát abyste si ujasnili jak se výstup bude měnit v závislosti na vstupech. Existuje daleko lepší reprezentace - vstupy i výstupy mohou nabývat jen dvou hodnot: 1 nebo 0. Proto se dá jednoduše sestrojit tablulka, která pokrývá všechny kombinace hodnot které mohou nastat:</p>
+<table class="table" id="pravd-transistor">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Pravdivostní tabulka transistoru</span><a class="headerlink" href="#pravd-transistor" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vstup 1</p></th>
+<th class="head"><p>Vstup 2</p></th>
+<th class="head"><p>Výstup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>Takovéhle tabulce se říká pravdivostní tabulka.</p>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Části matematiky která se zabývá pravdivostními hodnotami a výroky se říká výroková logika. Budu se od ní snažit co nejdříve vzdálit.</p>
+</div>
+<p>V další kapitole uvidíme, že pokud chytře spojíme několik transistorů za sebe, můžeme sestrojit logické obvody, které dokází provádět šikovné funkce, jako je třeba sčítání dvou čísel.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,20 +419,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="uvod.html"
+       href="transistor_cpu.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Úvod</p>
+        <p class="prev-next-title">Od transistoru k procesoru</p>
       </div>
     </a>
     <a class="right-next"
-       href="transistor.html"
+       href="os.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transistor</p>
+        <p class="prev-next-title">Operační systém</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
