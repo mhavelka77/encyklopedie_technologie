@@ -10,6 +10,8 @@ parts:
     sections:
     - file: pocitace/transistor
       title: Transistor 
+    - file: pocitace/hradla
+      title: Hradla 
   - file: pocitace/os
     title: Operační systémy
     sections:

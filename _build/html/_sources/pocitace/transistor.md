@@ -18,6 +18,8 @@ Místo popisování napětí a proudů se budeme bavit o tzv. logických hodnot�
 Pokud se budeme na jednoduchý vodič dívat jako na součástku se vstupem a výstupem, můžeme o ní říct, že logická hodnota na výstupu je rovna logické hodnotě na vstupu. 
 `````
 
+S tímto zjednodušením můžeme znovu popsat transistor. Pro ilustraci to sice uděláme, ale v další kapitole se bouhužel budeme muset vrátit k elektronice.
+
 **Nová definice transistoru:**
 
 Transistor je součástka, která má dva vstupy a jeden výstup. Pokud na prvním vstupu bude logická hodnota 1, na výstupu bude ta samá logická hodnota jako na druhém vstupu. Pokud na prvním vstupu bude 0, na výstupu bude také 0.
