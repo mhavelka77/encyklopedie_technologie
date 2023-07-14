@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Kapesní průvodce počítačových technologií</title>
+    <title>Hradla &#8212; Kapesní průvodce počítačových technologií</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Operační systém" href="os.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="transistor_cpu.html" />
+    <link rel="prev" title="Transistor" href="transistor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,9 +157,14 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítače</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="uvod.html">Úvod</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="os.html">Operační systémy</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transistor_cpu.html">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="transistor.html">Transistor</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Hradla</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="os.html">Operační systémy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="paralelismus.html">Paralelismus</a></li>
 </ul>
 </li>
@@ -168,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dummy/1.html">dummy file</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítačové sítě</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítačové sítě a internet</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../dummy/2.html">dummy file</a></li>
 </ul>
@@ -323,7 +328,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Hradla</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -332,9 +337,10 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-hradlo">NOT hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-hradlo">AND hradlo</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -345,7 +351,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  
+  <section class="tex2jax_ignore mathjax_ignore" id="hradla">
+<h1>Hradla<a class="headerlink" href="#hradla" title="Permalink to this heading">#</a></h1>
+<p>Zapojením několika transistorů do většího logického obvodu získáme takzvané <strong>hradlo</strong> (nebo logický člen, anglicky logic gate).</p>
+<p>Hradla mají svoje vstupy a výstupy a proto pro ně můžeme také vytvořit pravdivostní tabulky. Následuje výčet důležitých hradel, které budeme potřebovat. U každého hradla se podívejte na jeho schéma uvědomte si, že jeho pravdivostní tabulka odpovídá zapojení.</p>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Tohle je ideální příklad “zapouzdřování složitosti”. Místo toho, abychom se zabývali jednotlivými transistory v hradlech (natož proudy a napětí), jednou si je tady ukážeme a pak už o hradle budeme mluvit jen jako o obdelníčku, který z nějakých vstupů vytvoří výstupy.</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Poznámka 2 </p>
+<p>U každého hradla se pokusím popsat proč zapojení funguje, pokud máte na elektroniku alergii, igorujte. A akceptuje že hradlo funguje jako fakt.</p>
+</div>
+<section id="not-hradlo">
+<h2>NOT hradlo<a class="headerlink" href="#not-hradlo" title="Permalink to this heading">#</a></h2>
+<figure class="align-left" id="id2">
+<a class="reference internal image-reference" href="../_images/not.png"><img alt="NOT hradlo" src="../_images/not.png" style="width: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Schématická značka NOT gate.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id3">
+<a class="reference internal image-reference" href="../_images/not_schema.jpeg"><img alt="NOT hradlo schema" src="../_images/not_schema.jpeg" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Elektronické schéma NOT gate.</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<table class="table table-left" id="pravd-not" style="width: 300px">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Pravdivostní tabulka NOT gate </span><a class="headerlink" href="#pravd-not" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vstup</p></th>
+<th class="head"><p>Výstup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Na schématu (Fig. 2) vidíme, že k sestrojení NOT gate potřebujeme jen jeden transistor (Q1). Tři čáry vedoucí ze značky transistoru korespondují se třemi nožičkami popsanými v minulé kapitole. Proud, který teče z horního výstupu do spodního je regulován napětím na levém vstupu.</p>
+<p>Na obrázku který jsem ukradl na internetu je vstup popsný jako A a výstup popsaný jako Ā (Což je poměrně častá symbolizace něčeho invertovaného). Zároveň je horní nožička transistoru přes resistor spojená s Vcc, což je plus, řekněme 5V a spodní nožička je spojená se zemí (tj. referenční bod obvodu, který se považuje za 0V).</p>
+<p><strong>Co se stane když na vstup, tj A dáme logickou hodnotu 1, tj. 5V?</strong></p>
+<p>Transistor se “aktivuje”, tj. prakticky se v něm spojí horní a dolní nožička. To znamená, že z Vcc poteče do země takový proud který dovolí resistor. Jak to ovlívní výstup Ā? Ten se prakticky přímo spojí se zemí a tudíž na něm bude napětí 0V - logická 0.</p>
+<p><strong>Co se stane když na vstup A dáme logickou hodnotu 0, tj. 0V?</strong></p>
+<p>Transistor při 0V na kontrolní nožičce prakticky rozpojí horní a dolní nožičku. Výstup Ā se tak přes resistor spojí s Vcc - 5V. To sice byl i v prvním případě, ale nyní je rozdíl v tom, že z Vcc neteče proud do země. Kdybych se měl pokusit o intuitivní vysvětlení bez znalostí elektroniky, asi by vypadalo takhle:</p>
+<p>Vcc není spojena se zemí a tak mají elektrony dostatek času se přes resistor přesunout a rozprostřít i do výstupu Ā, kde svojí prezencí vytvoří napětí 5V - logickou 1. Když je naopak transistor aktivovaný a proud elektrony z Vcc tečou do země (=proud), raději se okamžitě přesunou do země než na výstup Ā, protože zem je místo, kam jsou přitahovány elektrickou silou.</p>
+</section>
+<section id="and-hradlo">
+<h2>AND hradlo<a class="headerlink" href="#and-hradlo" title="Permalink to this heading">#</a></h2>
+<figure class="align-left" id="id4">
+<a class="reference internal image-reference" href="../_images/and.png"><img alt="AND hradlo" src="../_images/and.png" style="width: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Schématická značka AND gate.</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id5">
+<a class="reference internal image-reference" href="../_images/and_schema.png"><img alt="AND hradlo schema" src="../_images/and_schema.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Elektronické schéma AND gate.</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<table class="table table-left" id="id1" style="width: 300px">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Pravdivostní tabulka AND gate </span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vstup 1</p></th>
+<th class="head"><p>Vstup 2</p></th>
+<th class="head"><p>Výstup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>AND hradlo má dva vstupy a vyplivne logickou 1 pouze pokud jsou oba vstupy také 1. Jeho sestrojení je banální, jen zapojíme dva transistory za sebe a díváme se, jestli teče proud. Tohle dívání provedeme stejným způsobem jako u NOT hradla, jen rezistor zapojíme až před zem.</p>
+<p>Zdroje obrázků:
+<a class="reference external" href="https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg">https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg</a>
+<a class="reference external" href="https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png">https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png</a></p>
+</section>
+</section>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -378,12 +481,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="transistor_cpu.html"
+       href="transistor.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Transistor</p>
       </div>
     </a>
     <a class="right-next"
@@ -412,9 +515,10 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-hradlo">NOT hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-hradlo">AND hradlo</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
