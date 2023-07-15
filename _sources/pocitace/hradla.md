@@ -11,7 +11,7 @@ Tohle je ideální příklad "zapouzdřování složitosti". Místo toho, abycho
 
 `````{admonition} Poznámka 2 
 :class: note 
-U každého hradla se pokusím popsat proč zapojení funguje, pokud máte na elektroniku alergii, igorujte. A akceptuje že hradlo funguje jako fakt.
+U prvních pár hradel se pokusím popsat proč zapojení funguje, pokud máte na elektroniku alergii, igorujte a akceptuje že hradlo funguje jako fakt.
 `````
 
 ## NOT hradlo
@@ -58,7 +58,7 @@ Transistor se "aktivuje", tj. prakticky se v něm spojí horní a dolní nožič
 
 Transistor při 0V na kontrolní nožičce prakticky rozpojí horní a dolní nožičku. Výstup Ā se tak přes resistor spojí s Vcc - 5V. To sice byl i v prvním případě, ale nyní je rozdíl v tom, že z Vcc neteče proud do země. Kdybych se měl pokusit o intuitivní vysvětlení bez znalostí elektroniky, asi by vypadalo takhle:
 
-Vcc není spojena se zemí a tak mají elektrony dostatek času se přes resistor přesunout a rozprostřít i do výstupu Ā, kde svojí prezencí vytvoří napětí 5V - logickou 1. Když je naopak transistor aktivovaný a proud elektrony z Vcc tečou do země (=proud), raději se okamžitě přesunou do země než na výstup Ā, protože zem je místo, kam jsou přitahovány elektrickou silou.
+Vcc není spojena se zemí a tak mají elektrony dostatek času se přes resistor přesunout a rozprostřít i do výstupu Ā, kde svojí prezencí vytvoří napětí 5V - logickou 1. Když je naopak transistor aktivovaný a elektrony z Vcc tečou do země (=proud), raději se okamžitě přesunou do země než na výstup Ā, protože zem je místo, kam jsou přitahovány elektrickou silou.
 
 
 
@@ -109,13 +109,98 @@ Elektronické schéma AND gate.
 AND hradlo má dva vstupy a vyplivne logickou 1 pouze pokud jsou oba vstupy také 1. Jeho sestrojení je banální, jen zapojíme dva transistory za sebe a díváme se, jestli teče proud. Tohle dívání provedeme stejným způsobem jako u NOT hradla, jen rezistor zapojíme až před zem.
 
 
+## OR hradlo
+
+
+```{figure} ./res/or.gif 
+:alt: OR hradlo 
+:width: 150px
+:align: left 
+
+Schématická značka OR gate.
+```
+
+```{figure} ./res/or_schema.png
+:alt: OR hradlo schema
+:width: 350px
+:align: right  
+
+Elektronické schéma OR gate.
+```
+
+```{list-table} Pravdivostní tabulka OR gate 
+:header-rows: 1
+:name: pravd_or
+:width: 300px
+:align: left
+
+* - Vstup 1
+  - Vstup 2
+  - Výstup 
+* - 0
+  - 0
+  - 0
+* - 0
+  - 1
+  - 1
+* - 1
+  - 0
+  - 1
+* - 1
+  - 1
+  - 1
+```
+
+## XOR hradlo
+
+
+```{figure} ./res/xor.png
+:alt: XOR hradlo 
+:width: 150px
+:align: left 
+
+Schématická značka XOR gate.
+```
+
+```{figure} ./res/xor_schema.png
+:alt: XOR hradlo schema
+:width: 350px
+:align: right  
+
+Elektronické schéma XOR gate.
+```
+
+```{list-table} Pravdivostní tabulka XOR gate 
+:header-rows: 1
+:name: pravd_xor
+:width: 300px
+:align: left
+
+* - Vstup 1
+  - Vstup 2
+  - Výstup 
+* - 0
+  - 0
+  - 0
+* - 0
+  - 1
+  - 1
+* - 1
+  - 0
+  - 1
+* - 1
+  - 1
+  - 0
+```
 
 
 
 
 
+#### Zdroje obrázků
 
-
-Zdroje obrázků:
 https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg
 https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png
+https://www.electrical4u.com/electrical/wp-content/uploads/2013/03/symbol-of-or-gate.gif
+https://circuitdigest.com/sites/default/files/inlineimages/u2/Schematic-of-Simple-OR-Gate.png
+https://www.researchgate.net/profile/Dr-Sharan/publication/291014115/figure/fig3/AS:415620106604545@1476102963059/XOR-gate-graphical-symbol-and-implementation.png

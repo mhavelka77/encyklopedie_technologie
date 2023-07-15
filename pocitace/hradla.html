@@ -340,6 +340,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-hradlo">NOT hradlo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-hradlo">AND hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-hradlo">OR hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xor-hradlo">XOR hradlo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zdroje-obrazku">Zdroje obrázků</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -361,7 +366,7 @@ document.write(`
 </div>
 <div class="note admonition">
 <p class="admonition-title">Poznámka 2 </p>
-<p>U každého hradla se pokusím popsat proč zapojení funguje, pokud máte na elektroniku alergii, igorujte. A akceptuje že hradlo funguje jako fakt.</p>
+<p>U prvních pár hradel se pokusím popsat proč zapojení funguje, pokud máte na elektroniku alergii, igorujte a akceptuje že hradlo funguje jako fakt.</p>
 </div>
 <section id="not-hradlo">
 <h2>NOT hradlo<a class="headerlink" href="#not-hradlo" title="Permalink to this heading">#</a></h2>
@@ -399,7 +404,7 @@ document.write(`
 <p>Transistor se “aktivuje”, tj. prakticky se v něm spojí horní a dolní nožička. To znamená, že z Vcc poteče do země takový proud který dovolí resistor. Jak to ovlívní výstup Ā? Ten se prakticky přímo spojí se zemí a tudíž na něm bude napětí 0V - logická 0.</p>
 <p><strong>Co se stane když na vstup A dáme logickou hodnotu 0, tj. 0V?</strong></p>
 <p>Transistor při 0V na kontrolní nožičce prakticky rozpojí horní a dolní nožičku. Výstup Ā se tak přes resistor spojí s Vcc - 5V. To sice byl i v prvním případě, ale nyní je rozdíl v tom, že z Vcc neteče proud do země. Kdybych se měl pokusit o intuitivní vysvětlení bez znalostí elektroniky, asi by vypadalo takhle:</p>
-<p>Vcc není spojena se zemí a tak mají elektrony dostatek času se přes resistor přesunout a rozprostřít i do výstupu Ā, kde svojí prezencí vytvoří napětí 5V - logickou 1. Když je naopak transistor aktivovaný a proud elektrony z Vcc tečou do země (=proud), raději se okamžitě přesunou do země než na výstup Ā, protože zem je místo, kam jsou přitahovány elektrickou silou.</p>
+<p>Vcc není spojena se zemí a tak mají elektrony dostatek času se přes resistor přesunout a rozprostřít i do výstupu Ā, kde svojí prezencí vytvoří napětí 5V - logickou 1. Když je naopak transistor aktivovaný a elektrony z Vcc tečou do země (=proud), raději se okamžitě přesunou do země než na výstup Ā, protože zem je místo, kam jsou přitahovány elektrickou silou.</p>
 </section>
 <section id="and-hradlo">
 <h2>AND hradlo<a class="headerlink" href="#and-hradlo" title="Permalink to this heading">#</a></h2>
@@ -443,9 +448,98 @@ document.write(`
 </tbody>
 </table>
 <p>AND hradlo má dva vstupy a vyplivne logickou 1 pouze pokud jsou oba vstupy také 1. Jeho sestrojení je banální, jen zapojíme dva transistory za sebe a díváme se, jestli teče proud. Tohle dívání provedeme stejným způsobem jako u NOT hradla, jen rezistor zapojíme až před zem.</p>
-<p>Zdroje obrázků:
-<a class="reference external" href="https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg">https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg</a>
-<a class="reference external" href="https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png">https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png</a></p>
+</section>
+<section id="or-hradlo">
+<h2>OR hradlo<a class="headerlink" href="#or-hradlo" title="Permalink to this heading">#</a></h2>
+<figure class="align-left" id="id6">
+<a class="reference internal image-reference" href="../_images/or.gif"><img alt="OR hradlo" src="../_images/or.gif" style="width: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Schématická značka OR gate.</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id7">
+<a class="reference internal image-reference" href="../_images/or_schema.png"><img alt="OR hradlo schema" src="../_images/or_schema.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Elektronické schéma OR gate.</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<table class="table table-left" id="pravd-or" style="width: 300px">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Pravdivostní tabulka OR gate </span><a class="headerlink" href="#pravd-or" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vstup 1</p></th>
+<th class="head"><p>Vstup 2</p></th>
+<th class="head"><p>Výstup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="xor-hradlo">
+<h2>XOR hradlo<a class="headerlink" href="#xor-hradlo" title="Permalink to this heading">#</a></h2>
+<figure class="align-left" id="id8">
+<a class="reference internal image-reference" href="../_images/xor.png"><img alt="XOR hradlo" src="../_images/xor.png" style="width: 150px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Schématická značka XOR gate.</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-right" id="id9">
+<a class="reference internal image-reference" href="../_images/xor_schema.png"><img alt="XOR hradlo schema" src="../_images/xor_schema.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Elektronické schéma XOR gate.</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<table class="table table-left" id="pravd-xor" style="width: 300px">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Pravdivostní tabulka XOR gate </span><a class="headerlink" href="#pravd-xor" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vstup 1</p></th>
+<th class="head"><p>Vstup 2</p></th>
+<th class="head"><p>Výstup</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<section id="zdroje-obrazku">
+<h3>Zdroje obrázků<a class="headerlink" href="#zdroje-obrazku" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg">https://boxbase.org/entries/2016/may/2/robot-electronics/not-gate.jpg</a>
+<a class="reference external" href="https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png">https://www.waitingforfriday.com/wp-content/uploads/2017/01/Slide13.png</a>
+<a class="reference external" href="https://www.electrical4u.com/electrical/wp-content/uploads/2013/03/symbol-of-or-gate.gif">https://www.electrical4u.com/electrical/wp-content/uploads/2013/03/symbol-of-or-gate.gif</a>
+<a class="reference external" href="https://circuitdigest.com/sites/default/files/inlineimages/u2/Schematic-of-Simple-OR-Gate.png">https://circuitdigest.com/sites/default/files/inlineimages/u2/Schematic-of-Simple-OR-Gate.png</a>
+<a class="reference external" href="https://www.researchgate.net/profile/Dr-Sharan/publication/291014115/figure/fig3/AS:415620106604545&#64;1476102963059/XOR-gate-graphical-symbol-and-implementation.png">https://www.researchgate.net/profile/Dr-Sharan/publication/291014115/figure/fig3/AS:415620106604545&#64;1476102963059/XOR-gate-graphical-symbol-and-implementation.png</a></p>
+</section>
 </section>
 </section>
 
@@ -518,6 +612,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-hradlo">NOT hradlo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#and-hradlo">AND hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#or-hradlo">OR hradlo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xor-hradlo">XOR hradlo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zdroje-obrazku">Zdroje obrázků</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
