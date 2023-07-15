@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Od transistoru k procesoru &#8212; Kapesní průvodce počítačových technologií</title>
+    <title>Sčítač &#8212; Kapesní průvodce počítačových technologií</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/transistor_cpu';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pocitace/scitac';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transistor" href="transistor.html" />
-    <link rel="prev" title="Úvod" href="uvod.html" />
+    <link rel="next" title="Operační systém" href="os.html" />
+    <link rel="prev" title="Hradla" href="hradla.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,10 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Počítače</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="uvod.html">Úvod</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="transistor_cpu.html">Od transistoru k CPU</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="transistor.html">Transistor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hradla.html">Hradla</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scitac.html">Sčítač</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sčítač</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="os.html">Operační systémy</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/pocitace/transistor_cpu.md" target="_blank"
+      <li><a href="../_sources/pocitace/scitac.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -327,11 +329,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Od transistoru k procesoru</h1>
+    <h1>Sčítač</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zdroje-obrazku">Zdroje obrázků</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -341,21 +351,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="od-transistoru-k-procesoru">
-<h1>Od transistoru k procesoru<a class="headerlink" href="#od-transistoru-k-procesoru" title="Permalink to this heading">#</a></h1>
-<p>Tuto podkapitolu považuji za nejdůležitější pro všechny, které reálně zajímá jak věci fungují. Pokusím se prostřednictvím několika textů odrazit od jednoduché elektroniky a dostat se až k jednoduchému modelu procesoru. Tento model získaný na konci kapitoly ještě nebude postačující k pochopení všeho co se v počítačích děje a dokonce se může zdát že je tomu až moc vzdálený. Navážu ne něj ale v kapitole o operačních systémech, kde by vše mělo začít dávat smysl.</p>
-<p><strong>Nekolik poznámek:</strong></p>
-<ul class="simple">
-<li><p>Jak bylo zmíněno, tahle podkapitola je hlavně pro ty, kteří chtějí pochopit jak počítač funguje. Pokud jste tu jen kvůli získání přehledu o technologiích, pravděpodobně ji můžete přeskočit.<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></li>
-<li><p>To co umožňuje počítačům provádět všechny užitečné a komplexní funkce jako je čtení na internetu není magie, ale spoustu chytrých mechanismů naskládaných na sobě. V následujících podpodkapitolách budou přesně tyto mechanismy popsány - proto se může někdy zdát, že s fungováním počítačů zas tolik nesouvisí. Doufám ale, že vše ve finále začne dávat smysl.</p></li>
-</ul>
-<hr class="footnotes docutils" />
-<aside class="footnote brackets" id="id2" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Jen bych ale ještě rád dodal, že pokud se chcete stát dobrým programátorem/síťařem/čímkoli souvisejícím s počítači, musíte tohle znát.</p>
-</aside>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="scitac">
+<h1>Sčítač<a class="headerlink" href="#scitac" title="Permalink to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Poznámka</p>
+<p>Bude se hodit znát dvojkovou soustavu. Článek na wikipedii: <a class="reference external" href="https://cs.wikipedia.org/wiki/Dvojkov%C3%A1_soustava">https://cs.wikipedia.org/wiki/Dvojková_soustava</a></p>
 </div>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../_images/half_adder.png"><img alt="Sčítač" src="../_images/half_adder.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Schéma sčítače gate.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Na obrázku nahoře vidíte zapojení hradla AND a XOR do obvodu, který má následující pravdivostní tabulku:</p>
+<table class="table table-left" id="pravd-hadder" style="width: 300px">
+<caption><span class="caption-number">Table 6 </span><span class="caption-text">Pravdivostní tabulka Sčítače </span><a class="headerlink" href="#pravd-hadder" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>S</p></th>
+<th class="head"><p>C</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<section id="zdroje-obrazku">
+<h2>Zdroje obrázků<a class="headerlink" href="#zdroje-obrazku" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/1920px-Half_Adder.svg.png">https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Half_Adder.svg/1920px-Half_Adder.svg.png</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -390,20 +434,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="uvod.html"
+       href="hradla.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Úvod</p>
+        <p class="prev-next-title">Hradla</p>
       </div>
     </a>
     <a class="right-next"
-       href="transistor.html"
+       href="os.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transistor</p>
+        <p class="prev-next-title">Operační systém</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -416,6 +460,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zdroje-obrazku">Zdroje obrázků</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

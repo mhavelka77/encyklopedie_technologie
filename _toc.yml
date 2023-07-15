@@ -12,6 +12,8 @@ parts:
       title: Transistor 
     - file: pocitace/hradla
       title: Hradla 
+    - file: pocitace/scitac
+      title: Sčítač 
   - file: pocitace/os
     title: Operační systémy
     sections:
